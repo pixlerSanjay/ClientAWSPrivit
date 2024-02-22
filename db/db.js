@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const db = () => {
     mongoose
@@ -10,7 +10,11 @@ const db = () => {
             console.log(
                 `MongoDB Database connected with HOST: ${con.connection.host}`
             );
+        })
+        .catch((error) => {
+            console.error('MongoDB connection error:', error);
         });
 };
 
 module.exports = db;
+
